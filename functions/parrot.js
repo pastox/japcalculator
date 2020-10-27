@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-undef
 exports.handler = async function (event, context) {
-	const eventObj = JSON.parse(event)
-	if (eventObj.body && eventObj.body.message) {
+	const bodyObj = JSON.parse(event.body);
+	if (bodyObj.message) {
 		return {
 			statusCode: 200,
-			body: JSON.stringify({ message:  eventObj.body.message}),
+			body: JSON.stringify({ message:  bodyObj.message}),
 		};
 	}
 	return {
