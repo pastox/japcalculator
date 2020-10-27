@@ -10,6 +10,7 @@ exports.handler = async function (event, context) {
 		}
 	}
 	return {
-		statusCode: 400
+		statusCode: 400,
+		body: JSON.stringify({ message:  "Please send a message"}),
 	};
 };
